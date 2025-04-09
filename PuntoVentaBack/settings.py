@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,14 +79,15 @@ WSGI_APPLICATION = 'PuntoVentaBack.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PuntoVentaBD',
-        'USER': 'postgres',
-        'PASSWORD': 'bot22rp',
-        'HOST': 'localhost',
-        'PORT': '5432',  # o el puerto que uses
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    # {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'PuntoVentaBD',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'bot22rp',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',  
+    # }
 }
 
 
