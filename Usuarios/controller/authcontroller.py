@@ -17,6 +17,8 @@ def get_client_ip(request):
 # Registro de usuario
 class Register(APIView):
     def post(self, request):
+        print("Datos recibidos desde el frontend:", request.data)
+
         nombre = request.data.get("nombre")
         correo = request.data.get("correo")
         contraseña = request.data.get("contraseña")
@@ -26,6 +28,7 @@ class Register(APIView):
 
         Usuario.objects.create_user(nombre=nombre, correo=correo, contraseña=contraseña)
         return Response({"mensaje": "Usuario registrado correctamente"}, status=status.HTTP_201_CREATED)
+
 
 # Login
 class Login(APIView):
