@@ -139,3 +139,6 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     "https://effulgent-pithivier-ad008b.netlify.app",
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://effulgent-pithivier-ad008b.netlify.app",
+]
