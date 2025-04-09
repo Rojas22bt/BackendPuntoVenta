@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-94)zseq0s_ugihdasrg7j2o$knt3f581oy33#b($1-t946&*wn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 AUTH_USER_MODEL= 'Usuarios.Usuario'
 
@@ -126,4 +126,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ALLOWED_HOSTS = ['localhost','web-production-0358.up.railway.app']
+ALLOWED_HOSTS = ['*']
