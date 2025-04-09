@@ -31,6 +31,7 @@ SECRET_KEY = 'django-insecure-94)zseq0s_ugihdasrg7j2o$knt3f581oy33#b($1-t946&*wn
 DEBUG = False
 
 AUTH_USER_MODEL= 'Usuarios.Usuario'
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -136,5 +137,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
+    "https://effulgent-pithivier-ad008b.netlify.app",
+]
+CORS_EXPOSE_HEADERS = ['Content-Type', 'Authorization']
+CSRF_TRUSTED_ORIGINS = [
     "https://effulgent-pithivier-ad008b.netlify.app",
 ]
